@@ -12,8 +12,8 @@ Product (planification du modéle )
 
 
 class Product(models.Model):
-    nom = models.CharFeild(max_length=128)
-    price = models.FloatFeild(default=0.0)
-    stock = models.IntegerFeild(default=0)
-    description = models.TextFeild(blank=True)
-    thumbnail = models.ImageFeilf(Upload_to="products", blank=True, null=True)
+    nom = models.CharField(max_length=128)
+    price = models.FloatField(default=0.0)
+    stock = models.IntegerField(default=0)
+    description = models.TextField(blank=True)
+    thumbnail = models.ImageField(upload_to="products", blank=True, null=True)
