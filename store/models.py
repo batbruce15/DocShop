@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse
+
 """
 Product (planification du modéle )
 - nom
@@ -20,3 +22,6 @@ class Product(models.Model):
     thumbnail = models.ImageField(upload_to="products", blank=True, null=True)
     def __str__(self):
         return f"{self.nom} {self.stock}"
+
+    def get_absolute_url(self):
+        return reverse("product", kwargs={"slug": self.slug})
